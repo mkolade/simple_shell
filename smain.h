@@ -172,21 +172,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_realloc_ptr(char **ptr, unsigned int old_size, unsigned int new_size);
 void _memcpy(void *dest, const void *src, unsigned int size);
 
-/*shs_execve*/
-int is_current_dir(char *path, int *i);
+/*smain_execve*/
+int currentDir(char *path, int *i);
 char *_which(char *cmd, char **_environ);
-int is_execve(shell_data *shdata);
-int check_cmd_error(char *dir, shell_data *shdata);
+int ExeCve(shell_data *shdata);
+int checkErrCmd(char *dir, shell_data *shdata);
 int cmd_execve(shell_data *shdata);
 
-/*shs_tokenize.c*/
+/*smain_tokenize.c*/
 void add_nodes(div_list **head_s, line_list **head_l, char *input);
 void next_cmd(div_list **list_s, line_list **list_l, shell_data *shdata);
 int div_commands(shell_data *shdata, char *input);
 char **tokenize_line(char *input);
 char *swap_char(char *input, int bool);
 
-/*shs.c*/
+/*smain.c*/
 void freeData(shell_data *shdata);
 void setData(shell_data *shdata, char **av);
 void shellPrompt(shell_data *shdata);

@@ -51,7 +51,7 @@ The main difference between a function and a system call is that functions execu
 In C, you can create a new process using the `fork` system call. The `fork` call creates a new process by duplicating the existing process. After forking, the original process becomes the parent process, and the newly created process becomes the child process. The `fork` system call returns different values in the parent and child processes, allowing them to distinguish between each other.
 
 ## What are the three prototypes of `main`
-In C, the `main` function can have three different prototypes:
+In C, the 'main' function can have three different prototypes:
 
 1. `int main(void)`: This is the most basic form of `main` and is used when the program doesn't take any command-line arguments or environment variables. The return value represents the exit status of the program.
 

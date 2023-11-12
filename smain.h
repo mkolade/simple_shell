@@ -125,4 +125,89 @@ div_list *add_div_node_end(div_list **head, char sep);
 void free_div_list(div_list **head);
 line_list *add_line_node_end(line_list **head, char *line);
 void free_line_list(line_list **head);
+
+/*environ.c*/
+char *copy_info(char *name, char *value);
+void set_env_var(char *name, char *value, shell_data *shdata);
+int _setenv(shell_data *shdata);
+int _delenv(shell_data *shdata);
+int cmp_env_name(const char *nenv, const char *name);
+char *_getenv(const char *name, char **_environ);
+int _env(shell_data *shdata);
+
+/*error_code.c*/
+int error_code(shell_data *shdata, int eval);
+int (*get_builtin(char *cmd))(shell_data *);
+
+/*error_msg.c*/
+char *strcat_error_msg(shell_data *shdata,
+		char *msg, char *error, char *var_str);
+char *error_env(shell_data *shdata);
+char *error_path_126(shell_data *shdata);
+char *error_message(shell_data *shdata);
+char *cmd_not_found(shell_data *shdata);
+char *msg_exit_shell(shell_data *shdata);
+
+/*error_syntax.c*/
+int count_char(char *input, int i);
+int find_sy_error(char *input, int i, char last);
+int first_char_input(char *input, int *i);
+void syntax_error_info(shell_data *shdata, char *input, int i, int bool);
+int check_syntax_error(shell_data *shdata, char *input);
+
+/*help_info.c*/
+void _help_info_env(void);
+void _help_info_setenv(void);
+void _help_info_unsetenv(void);
+void _help_info_exit(void);
+int get_help(shell_data *shdata);
+
+/*read_input.c*/
+void assign_line(char **lineptr, size_t *n, char *buffer, size_t j);
+ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
+char *_get_line(int *i_eof);
+
+/*realloc_ptr.c*/
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char **_realloc_ptr(char **ptr, unsigned int old_size, unsigned int new_size);
+void _memcpy(void *dest, const void *src, unsigned int size);
+
+/*shs_execve*/
+int is_current_dir(char *path, int *i);
+char *_which(char *cmd, char **_environ);
+int is_execve(shell_data *shdata);
+int check_cmd_error(char *dir, shell_data *shdata);
+int cmd_execve(shell_data *shdata);
+
+/*shs_tokenize.c*/
+void add_nodes(div_list **head_s, line_list **head_l, char *input);
+void next_cmd(div_list **list_s, line_list **list_l, shell_data *shdata);
+int div_commands(shell_data *shdata, char *input);
+char **tokenize_line(char *input);
+char *swap_char(char *input, int bool);
+
+/*shs.c*/
+void free_data(shell_data *shdata);
+void set_data(shell_data *shdata, char **av);
+void shell_prompt(shell_data *shdata);
+void get_signal(int s);
+void _help_info(void);
+
+/*start_exit.c*/
+int exec_line(shell_data *shdata);
+int exit_shell(shell_data *shdata);
+
+/*strings.c*/
+char *_strdup(const char *s);
+size_t _strlen(const char *s);
+int comp_chars(const char str[], const char *delim);
+char *_strtok(char str[], const char *delim);
+int _isdigit(const char *s);
+char *_strcat(char *dest, const char *src);
+char *_strcpy(char *dest, const char *src);
+int _strcmp(const char *s1, const char *s2);
+char *_strchr(const char *s, int c);
+size_t _strspn(const char *s, const char *accept);
+
+
 #endif /* smain.h */

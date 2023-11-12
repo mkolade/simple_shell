@@ -1,4 +1,4 @@
-# 0x16. C - Simple Shell
+#0x16. C - Simple Shell
 
 ## Introduction
 This repository will contain the source code for a simple shell program written in C. This shell is a command-line interpreter that allows users to interact with the operating system by executing commands and managing processes swiftly.

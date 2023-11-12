@@ -92,4 +92,37 @@ typedef struct built_in_s
 	char *name;
 	int (*f)(shell_data *shdata);
 } built_in;
+
+/*change_dir.c*/
+int cd_dir(shell_data *shdata);
+void cd_per(shell_data *shdata);
+void cd_goto(shell_data *shdata);
+void cd_go_back(shell_data *shdata);
+void cd_home(shell_data *shdata);
+
+/*check_input.c*/
+void check_env_var(store_var **h, char *in, shell_data *data);
+int check_var_typed(store_var **h, char *in, char *st, shell_data *data);
+char *replace_str_var(store_var **head,
+		char *input, char *new_input, int nlen);
+char *rep_str_var(char *input, shell_data *shdata);
+
+/*conver_string.c*/
+int get_len(int n);
+char *int_to_string(int n);
+int _atoi(char *s);
+char *without_comment(char *in);
+void cmd_help(void);
+void aux_help_alias(void);
+void change_cd_help(void);
+void rev_string(char *s);
+
+/*div_list.c*/
+store_var *add_store_var_node(store_var **head,
+		int var_length, char *value, int value_length);
+void free_store_var_list(store_var **head);
+div_list *add_div_node_end(div_list **head, char sep);
+void free_div_list(div_list **head);
+line_list *add_line_node_end(line_list **head, char *line);
+void free_line_list(line_list **head);
 #endif /* smain.h */

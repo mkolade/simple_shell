@@ -110,3 +110,25 @@ char *_getenv(const char *name, char **_environ)
 
 	return (ptr_env + mov);
 }
+
+/**
+ * _env - prints the environment variables
+ * @shdata: data relevant
+ * Return: 1 on success
+ */
+int _env(shell_data *shdata)
+{
+	int i, j;
+
+	for (i = 0; shdata->_environ[i]; i++)
+	{
+		for (j = 0; shdata->_environ[i][j]; j++)
+			;
+
+		write(STDOUT_FILENO, shdata->_environ[i], j);
+		write(STDOUT_FILENO, "\n", 1);
+	}
+
+	shdata->status = 0;
+	return (1);
+}

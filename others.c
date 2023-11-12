@@ -61,3 +61,52 @@ char *msg_exit_shell(shell_data *shdata)
 
 	return (error);
 }
+
+/**
+ * getHelpOrInfo - Provides general help information for the help builtin.
+ * Return: return null value.
+ */
+void getHelpOrInfo(void)
+{
+	char *help = "^J-S^ > bash, version 1.0(1)-release\n";
+
+	write(STDOUT_FILENO, help, _strlen(help));
+	help = "These commands are defined internally. Type 'help' to see the list.";
+	help = " Type 'help name' to find out more about the function 'name'.\n\n ";
+	write(STDOUT_FILENO, help, _strlen(help));
+	help = "alias: alias [name=['string']]\n cd: cd [-L|[-P [-e]] [-@]] [dir]";
+	help = "exit: exit [n]\n";
+	help = "env: env [option] [name=value] [command [args]]\n";
+	help = "setenv: setenv [variable] [value]\n";
+	help = "unsetenv: unsetenv [variable]\n";
+	write(STDOUT_FILENO, help, _strlen(help));
+}
+
+/**
+ * _getenv - get an environment variable
+ * @name: name of the environment variable
+ * @_environ: environment variable
+ *
+ * Return: value of the environment variable if found.
+ * Otherwise, returns NULL.
+ */
+char *_getenv(const char *name, char **_environ)
+{
+	char *ptr_env;
+	int i, mov;
+
+	ptr_env = NULL;
+	mov = 0;
+
+	for (i = 0; _environ[i]; i++)
+	{
+		mov = cmp_env_name(_environ[i], name);
+		if (mov)
+		{
+			ptr_env = _environ[i];
+			break;
+		}
+	}
+
+	return (ptr_env + mov);
+}

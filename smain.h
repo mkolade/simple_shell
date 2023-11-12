@@ -210,4 +210,5 @@ char *_strchr(const char *s, int c);
 size_t _strspn(const char *s, const char *accept);
 
 
+
 #endif /* smain.h */

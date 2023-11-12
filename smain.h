@@ -187,11 +187,11 @@ char **tokenize_line(char *input);
 char *swap_char(char *input, int bool);
 
 /*shs.c*/
-void free_data(shell_data *shdata);
-void set_data(shell_data *shdata, char **av);
-void shell_prompt(shell_data *shdata);
-void get_signal(int s);
-void _help_info(void);
+void freeData(shell_data *shdata);
+void setData(shell_data *shdata, char **av);
+void shellPrompt(shell_data *shdata);
+void getSignal(int s);
+void getHelpOrInfo(void);
 
 /*start_exit.c*/
 int exec_line(shell_data *shdata);

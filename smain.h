@@ -41,4 +41,55 @@ typedef struct data
 	char **_environ;
 	char *pid;
 } shell_data;
+
+/**
+ * struct div - single linked list
+ * @separator: ; | &
+ * @next: next node
+ * Description: singly linked list to store separators
+ */
+typedef struct div
+{
+	char separator;
+	struct div *next;
+} div_list;
+
+/**
+ * struct cmd_line_list - single linked list
+ * @line: command line
+ * @next: next node
+ * Description: single linked list to store command lines
+ */
+typedef struct cmd_line_list
+{
+	char *line;
+	struct cmd_line_list *next;
+} line_list;
+
+/**
+ * struct store_var_list - single linked list
+ * @len_var: length of variable
+ * @val: value of variable
+ * @len_val: length of value
+ * @next: next node
+ * Description: single linked list to store variables
+ */
+typedef struct store_var_list
+{
+	int len_var;
+	char *val;
+	int len_val;
+	struct store_var_list *next;
+} store_var;
+
+/**
+ * struct built_in_s - Builtin struct for command args.
+ * @name: name of command builtin i.e cd, exit, env
+ * @f: data type pointer function.
+ */
+typedef struct built_in_s
+{
+	char *name;
+	int (*f)(shell_data *shdata);
+} built_in;
 #endif /* smain.h */

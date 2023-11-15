@@ -1,9 +1,9 @@
 #include "smain.h"
 
 /**
- * free_line_list - Frees a line_list.
+ * free_line_list - Frees a line_list
  *
- * @head: Address of the head of the linked list.
+ * @head: Address of the head of the linked list
  *
  * Return: return null.
  */

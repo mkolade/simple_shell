@@ -33,6 +33,20 @@ Ken Thompson is an American computer scientist and co-creator of the Unix operat
 
 ## How does a shell work
 A shell is a command-line interpreter that acts as a user interface to an operating system. It reads user commands, interprets them, and executes the corresponding programs or system functions. The basic workflow of a shell involves reading input from the user, parsing the input into commands and arguments, executing the commands, and displaying the output to the user. Shells can also provide features like environment variable management, input/output redirection, and process control.
+A function and a system call are both mechanisms used in programming to accomplish specific tasks, but they differ in their scope and purpose.
+
+ Function: 
+   - In programming, a function is a reusable block of code that performs a specific task. It is a named sequence of instructions that takes input parameters, performs computations, and returns a value.
+   - Functions are typically defined within the program and are called by other parts of the program to perform specific tasks.
+   - Examples include built-in functions like math.sqrt() or user-defined functions like def calculate_average().
+
+System Call:
+   - A system call, on the other hand, is a request made by a program to the operating system for performing privileged operations or accessing resources that are not directly available to the program.
+   - System calls provide a way for programs to interact with the underlying operating system and access features like file operations, network communications, process management, etc.
+   - System calls typically involve transferring control from the program to the operating system kernel, which then performs the requested operation on behalf of the program.
+   - Examples of system calls include opening a file with open(), reading/writing data with read() or write(), creating a new process with fork(), etc.
+
+In summary, functions are general-purpose blocks of reusable code within a program, while system calls are specific requests made by programs to the underlying operating system for privileged operations or access to restricted resources.
 
 ## What is a pid and a ppid
 In an operating system, a PID (Process IDentifier) is a unique numerical identifier assigned to each running process. It is used by the system to track and manage processes. The PPID (Parent Process IDentifier) represents the PID of the parent process that spawned a particular process. The PPID is useful for hierarchical process management, as it allows the system to maintain the relationship between parent and child processes.

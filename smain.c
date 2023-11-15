@@ -21,11 +21,11 @@ int main(int ac, char **av)
 	return (shdata.status);
 }
 /**
- * freeData - frees up data structure
+ * freedata - frees up data structure
  * @shdata: data structure
  * Return: return null
  */
-void freeData(shell_data *shdata)
+void freedata(shell_data *shdata)
 {
 	unsigned int i;
 
@@ -39,7 +39,7 @@ void freeData(shell_data *shdata)
 }
 
 /**
- * setData - Initialize the data structure
+ * setdata - Initialize the data structure
  * @shdata: data structure
  * @av: argument vector
  * Return: return null
@@ -69,12 +69,12 @@ void setData(shell_data *shdata, char **av)
 }
 
 /**
- * shellPrompt - Loops of shell
+ * shellprompt - Loops of shell
  * @shdata: data is relevant (av, input, args)
  *
  * Return: return null.
  */
-void shellPrompt(shell_data *shdata)
+void shellprompt(shell_data *shdata)
 {
 	int to_continue, i_eof;
 	char *input;

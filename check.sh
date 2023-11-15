@@ -23,7 +23,7 @@ function run_check()
     rm 1a2b3c4d5e6f7g8h9i 1a2b3c4d5e6f7g8h9b;
     echo "************************************"
 }
-######### case 1
+######## case 1
 command1=$(echo "ls" | ./hsh 2>&1)
 command2=$(echo "ls" | sh 2>&1)
 echo "$command1" > 1a2b3c4d5e6f7g8h9i

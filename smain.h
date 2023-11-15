@@ -18,7 +18,7 @@
 #define TOKEN_SIZE 128
 #define BUFSIZE 1024
 
-/* This Points to an array of pointers to strings called the "environment" */
+/* This points to an array of pointers to strings called the "environment" */
 extern char **environ;
 
 /**

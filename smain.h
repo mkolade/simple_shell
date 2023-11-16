@@ -156,11 +156,11 @@ void syntax_error_info(shell_data *shdata, char *input, int i, int bool);
 int check_syntax_error(shell_data *shdata, char *input);
 
 /*help_info.c*/
-void _help_info_env(void);
-void _help_info_setenv(void);
-void _help_info_unsetenv(void);
-void _help_info_exit(void);
-int get_help(shell_data *shdata);
+void helpInfoEnv(void);
+void helpInfoSetenv(void);
+void helpInfoUnsetenv(void);
+void helpInfoExit(void);
+int getHelp(shell_data *shdata);
 
 /*read_input.c*/
 void assignLine(char **lineptr, size_t *n, char *buffer, size_t j);

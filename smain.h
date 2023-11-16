@@ -163,8 +163,8 @@ void _help_info_exit(void);
 int get_help(shell_data *shdata);
 
 /*read_input.c*/
-void assign_line(char **lineptr, size_t *n, char *buffer, size_t j);
-ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
+void assignLine(char **lineptr, size_t *n, char *buffer, size_t j);
+ssize_t getLine(char **lineptr, size_t *n, FILE *stream);
 char *_get_line(int *i_eof);
 
 /*realloc_ptr.c*/

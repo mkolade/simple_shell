@@ -1,12 +1,12 @@
 #include "smain.h"
 
 /**
- * currentdir - checks if ":" is in  current directory path
+ * currentDir - checks if ":" is in  current directory path
  * @path: pointer to  path string
  * @i: pointer to  index
  * Return: 1 if  path contains ":", 0 otherwise
  */
-int currentdir(char *path, int *i)
+int currentDir(char *path, int *i)
 {
 	if (path[*i] == ':')
 		return (1);

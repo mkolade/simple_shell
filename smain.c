@@ -25,7 +25,7 @@ int main(int ac, char **av)
  * @shdata: data structure
  * Return: return null
  */
-void freedata(shell_data *shdata)
+void freeData(shell_data *shdata)
 {
 	unsigned int i;
 
@@ -74,7 +74,7 @@ void setData(shell_data *shdata, char **av)
  *
  * Return: return null.
  */
-void shellprompt(shell_data *shdata)
+void shellPrompt(shell_data *shdata)
 {
 	int to_continue, i_eof;
 	char *input;

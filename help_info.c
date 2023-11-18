@@ -67,7 +67,7 @@ int getHelp(shell_data *shdata)
 	if (shdata->args[1] == NULL)
 		getHelpOrInfo();
 	else if (_strcmp(shdata->args[1], "setenv") == 0)
-		_help_info_setenv();
+		helpInfoSetenv();
 	else if (_strcmp(shdata->args[1], "env") == 0)
 		helpInfoEnv();
 	else if (_strcmp(shdata->args[1], "unsetenv") == 0)

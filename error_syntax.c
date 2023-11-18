@@ -144,7 +144,6 @@ void syntax_error_info(shell_data *shdata, char *input, int i, int bool)
 
 /**
  * check_syntax_error - intermediate function to find and print a syntax error
- *
  * @shdata: data structure
  * @input: input string
  * Return: 1 if there is an error. 0 in other case

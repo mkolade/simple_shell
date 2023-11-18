@@ -125,7 +125,28 @@ int _delenv(shell_data *shdata)
 	realloc_environ[j] = NULL;
 	free(shdata->_environ[k]);
 	free(shdata->_environ);
-
 	shdata->_environ = realloc_environ;
 	return (1);
+}
+/**
+ * cmp_env_name - compares env variables names
+ * with the name passed.
+ * @nenv: name of the environment variable
+ * @name: name passed
+ *
+ * Return: 0 if they are not equal, another value if they are.
+ */
+int cmp_env_name(const char *nenv, const char *name)
+{
+	int i;
+
+	for (i = 0; nenv[i] != '='; i++)
+	{
+		if (nenv[i] != name[i])
+		{
+			return (0);
+		}
+	}
+
+	return (i + 1);
 }
